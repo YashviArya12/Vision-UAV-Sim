@@ -1,1 +1,25 @@
+# Core numerical and scientific computing
+numpy>=1.23
+scipy>=1.9
+
+# Simulation and physics engine
+pybullet>=3.2.5
+
+# Computer vision
+opencv-python>=4.8
+
+# Visualization and plotting
+matplotlib>=3.7
+
+# Image processing (optional but useful for vision pipelines)
+scikit-image>=0.21
+
+# Machine learning utilities (optional – useful later for perception)
+scikit-learn>=1.3
+
+# Progress bars and utilities
+tqdm>=4.66
+
+# Configuration and file handling
+pyyaml>=6.0
 
