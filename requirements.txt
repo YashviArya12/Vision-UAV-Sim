@@ -1,25 +1,22 @@
-# Core numerical and scientific computing
+# Numerical computation and state updates
 numpy>=1.23
-scipy>=1.9
 
-# Simulation and physics engine
+# Physics-based simulation for UAV
 pybullet>=3.2.5
 
-# Computer vision
+# Computer vision for onboard camera simulation
 opencv-python>=4.8
 
-# Visualization and plotting
-matplotlib>=3.7
-
-# Image processing (optional but useful for vision pipelines)
+# Image processing utilities (edges, optical flow, filters)
 scikit-image>=0.21
 
-# Machine learning utilities (optional – useful later for perception)
-scikit-learn>=1.3
+# Visualization of UAV trajectory and vision output
+matplotlib>=3.7
 
-# Progress bars and utilities
+# Configuration handling (camera params, environment settings)
+pyyaml>=6.0
+
+# Progress tracking during simulation runs
 tqdm>=4.66
 
-# Configuration and file handling
-pyyaml>=6.0
 
