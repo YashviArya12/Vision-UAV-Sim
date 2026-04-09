@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<robot name="astra">
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.4 0.4 0.05"/> </geometry>
+      <material name="dark_grey">
+        <color rgba="0.2 0.2 0.2 1"/>
+      </material>
+    </visual>
+    
+    <collision>
+      <geometry>
+        <box size="0.4 0.4 0.05"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="1.5"/> <inertia ixx="0.016" ixy="0" ixz="0" iyy="0.016" iyz="0" izz="0.032"/>
+    </inertial>
+  </link>
+
+%adding the camera
+
+  <link name="camera_link">
+    <visual>
+      <geometry>
+        <box size="0.02 0.05 0.02"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+    <origin xyz="0.2 0 0.03" rpy="0 0 0"/> </joint>
+
+%Adding the rotors
+
+  <link name="rotor_fr">
+    <visual>
+      <geometry>
+        <cylinder radius="0.1" length="0.01"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="joint_fr" type="continuous">
+    <parent link="base_link"/>
+    <child link="rotor_fr"/>
+    <origin xyz="0.15 0.15 0.03" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/> </joint>
+
+  <link name="rotor_fl">
+    <visual>
+      <geometry><cylinder radius="0.1" length="0.01"/></geometry>
+      <material name="black"><color rgba="0 0 0 1"/></material>
+    </visual>
+  </link>
+  <joint name="joint_fl" type="continuous">
+    <parent link="base_link"/>
+    <child link="rotor_fl"/>
+    <origin xyz="0.15 -0.15 0.03"/> <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="rotor_rr">
+    <visual>
+      <geometry><cylinder radius="0.1" length="0.01"/></geometry>
+      <material name="black"><color rgba="0 0 0 1"/></material>
+    </visual>
+  </link>
+  <joint name="joint_rr" type="continuous">
+    <parent link="base_link"/>
+    <child link="rotor_rr"/>
+    <origin xyz="-0.15 0.15 0.03"/> <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="rotor_rl">
+    <visual>
+      <geometry><cylinder radius="0.1" length="0.01"/></geometry>
+      <material name="black"><color rgba="0 0 0 1"/></material>
+    </visual>
+  </link>
+  <joint name="joint_rl" type="continuous">
+    <parent link="base_link"/>
+    <child link="rotor_rl"/>
+    <origin xyz="-0.15 -0.15 0.03"/> <axis xyz="0 0 1"/>
+  </joint>
+</robot>
